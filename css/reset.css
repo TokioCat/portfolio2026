@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+  }
+
+/* リセット */
+html,
+body,
+header,
+footer,
+main,
+section,
+h1,
+h2,
+h3,
+ul,
+li,
+p,
+dl {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    color: #333333;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    transition: 0.2s;
+}
+
+/*a:hover {
+    opacity: 0.5;
+}*/
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+svg {
+  /* インライン要素特有の隙間を消す */
+  display: block;
+  
+  /* 親要素に合わせて最大幅を制限 */
+  max-width: 100%;
+  height: auto;
+  
+  /* CSSでカラーを変更可能に（currentColorを利用） */
+  fill: currentColor;
+}
