@@ -1,268 +1,446 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TokioCat</title>
     <!-- ▼GoogleFonts読み込み -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=WDXL+Lubrifont+JP+N&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
-     <!-- ▼CSS読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=WDXL+Lubrifont+JP+N&family=Zen+Kaku+Gothic+New&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ▼CSS読み込み -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    
+  </head>
+  <body>
+    <header id="header">
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#header">Home</a></li>
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="category.html">Works</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-</head>
-<body>
+      <div class="hamburger">
+        <!-- ハンバーガーボタン -->
+        <div class="drawer-icon">
+          <img
+            src="./images/btn-gnav open.png"
+            alt="メニューを開く"
+            class="icon-open"
+          />
+          <img
+            src="./images/btn-gnav close.png"
+            alt="メニューを閉じる"
+            class="icon-close"
+          />
+        </div>
 
-<header id="header">
-<nav class="header__nav">  
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#concept">Concept</a></li>
-<li><a href="#service">Service</a></li>
-<li><a href="#">Works</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-<!-- <div class="hamburger">
-    <span></span>
-</div>
-<nav class="header__nav-sp">
-    <ul>
-        <li><a href="H1">Home</a></li>
-        <li><a href="concept">Concept</a></li>
-        <li><a href="service">Service</a></li>
-        <li><a href="#">Works</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="contact">Contact</a></li>
-    </ul>
-</nav> -->
+        <nav class="header__nav-sp">
+          <ul>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#concept">Concept</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="category.html">Works</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
 
-<h1 class="logo">
-    <a href="./index.html">
-        <img src="./images/logo Tokiocat.svg" alt="TokioCat" />
-    </a>
-</h1>
-</header>
+      <h1 class="logo">
+        <a href="index_0527.html#header">
+          <img src="./images/logo Tokiocat.svg" alt="TokioCat" />
+        </a>
+      </h1>
+    </header>
 
+    <section class="concept" id="concept">
+      <figure class="main-img">
+        <picture>
+          <source
+            media="(min-width: 1100px)"
+            srcset="./images/bigcat_pc.png"
+            alt="猫のPCモニター /"
+          />
+          <img
+            src="./images/bigcat_pc.png"
+            alt="猫のPCモニター"
+            class="img-pc"
+          />
 
-<section class="concept" id="concept">
-    
-        <figure class="main-img">
-            <img src="./images/bigcat_laptop.png" alt="猫のモニター" />
-        </figure>
-        <div class="concept-inner">
-            
-            <h2 ><img src="./images/concept_title_pc.png" alt="COMMUNICATION & DESIGN" /> </h2>
+          <source
+            media="(min-width: 768px) and (max-width: 1099px)"
+            srcset="./images/bigcat_laptop.png"
+            alt="猫のlaptopモニター /"
+          />
+          <img
+            src="./images/bigcat_laptop.png"
+            alt="猫のラップトップモニター"
+            class="img-laptop"
+          />
 
-                <h3 class="title">Concept</h3>
-                <div class="concept-text">クライアント様の殆どと言ってもいいかも知れないのですが、
-                    全くもって「どのようなカンジにすれば良いかわからない」と途方に暮れてご依頼される
-                    ことがよくありますが、それで全然オッケーだと思うんです。
-                </div>
-                
-                <div class="point"><strong>「ホントどうすればいいか分からない（涙）」 ＝ <br>「それだけ真剣に思いを巡らせている（！）」 です！</strong></div>
-                
-                <div class="concept-text">ですので、クライアント様が情熱を掛けていることや目指していること、
-                    得意なことや苦手なこと、日常のふとした思いなどを私なりに深く共感し、大切に拾い上げ、
-                    最高のプレゼントを選ぶような気持ちてデザインの方向を決めて
-                    カタチにすることが私の使命であり、得意とすることです。
-                </div>
-                
-                <p>絶対やる前提だけどどうしよう分からない状態でも、どうぞご安心ください。</p>
-        
-        <div class="btn-works"><a href="#">Works</a></div>  
-        </div> 
-</section>  
+          <source
+            media="(min-width: 480px) and (max-width: 767px)"
+            srcset="./images/bigcat_tablet.png"
+            alt="猫のtabletモニター /"
+          />
+          <img
+            src="./images/bigcat_tablet.png"
+            alt="猫のタブレットモニター"
+            class="img-tablet"
+          />
 
-    
+          <source
+            media="(max-width: 479px)"
+            srcset="./images/bigcat_sp.png"
+            alt="猫のspモニター /"
+          />
+          <img
+            src="./images/bigcat_sp.png"
+            alt="猫のspモニター"
+            class="img-sp"
+          />
+        </picture>
+      </figure>
+      <div class="concept-inner">
+        <h2>
+          <img
+            src="./images/concept_title_pc.png"
+            alt="COMMUNICATION & DESIGN"
+            class="concept_title_pc"
+          />
+          <img
+            src="./images/concept_title_sp.png"
+            alt="COMMUNICATION & DESIGN"
+            class="concept_title_sp"
+          />
+        </h2>
 
-<main>
-	
-<section class="service" id="service">
-    <div class="container">
-        <div class="section__heading">
+        <h3 class="title">Concept</h3>
+        <div class="concept-text">
+          クライアント様の殆どと言ってもいいかも知れないのですが、
+          全くもって「どのようなカンジにすれば良いかわからない」と途方に暮れてご依頼される
+          ことがよくありますが、それで全然オッケーだと思うんです。
+        </div>
+
+        <div class="point">
+          <strong
+            >「ホントどうすればいいか分からない（涙）」 ＝
+            <br />「それだけ真剣に思いを巡らせている（！）」 です！</strong
+          >
+        </div>
+
+        <div class="concept-text">
+          ですので、クライアント様が情熱を掛けていることや目指していること、
+          得意なことや苦手なこと、日常のふとした思いなどを私なりに深く共感し、大切に拾い上げ、
+          最高のプレゼントを選ぶような気持ちてデザインの方向を決めて
+          カタチにすることが私の使命であり、得意とすることです。
+        </div>
+
+        <p>
+          絶対やる前提だけどどうしよう分からない状態でも、どうぞご安心ください。
+        </p>
+
+        <div class="btn-works"><a href="category.html">Works</a></div>
+      </div>
+    </section>
+
+    <main>
+      <section class="service" id="service">
+        <div class="container">
+          <div class="section__heading">
             <h3 class="title">Service</h3>
             <h4 class="subtitle">ほどよい距離感で一緒に歩む</h4>
-        </div>
-        <div class="heading__text">
-            <p>クライアント様が事業を広げるために必要なツールを明確に表現し、自社で情報発信できる仕組みを整え、ロゴマークや名刺、会社案内、ノベルティ、POP類の統一感あるトーン作りをサポートいたします。
-            また、月額での継続的なクリエイティブ支援や、コンテンツ企画・SNS運用（Instagram）におけるマーケティング伴走、小物類でしたら商品撮影も行っています。</p>
-            
-            <p>「社内でデザイナーが雇えない」、「広報やWebがわかる人がいない」
-            クライアント様の現状に合わせて、ほどよい距離感をもってサポートいたします。</p>
-        </div>
-    </div>
-</section>
+          </div>
+          <div class="heading__text">
+            <p>
+              クライアント様が事業を広げるために必要なツールを明確に表現し、自社で情報発信できる仕組みを整え、ロゴマークや名刺、会社案内、ノベルティ、POP類の統一感あるトーン作りをサポートいたします。
+              また、月額での継続的なクリエイティブ支援や、コンテンツ企画・SNS運用（Instagram）におけるマーケティング伴走、小物類でしたら商品撮影も行っています。
+            </p>
 
-<section class="about" id="about">
-    <div class="container">
-        <div class="section__heading">
+            <p>
+              「社内でデザイナーが雇えない」、「広報やWebがわかる人がいない」
+              クライアント様の現状に合わせて、ほどよい距離感をもってサポートいたします。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container">
+          <div class="section__heading">
             <h3 class="h3-title">About</h3>
-            <h4 class="subtitle">“ 要点は押さえる陽だまりの猫 ”
-            <br>ーーある先輩からの言葉ーー</h4>
-        </div>
-        <div class="heading__text">
-            <p>ジュエリーデザインの会社に勤務したいた時の先輩のひとりが、
-                私が退職するときに寄せ書きに書いてくださった「私の印象」が
-            “ 要点はちゃんと押さえる陽だまりの猫 ” と言うものでした。</p>
-            
-            <p>当時は社員寮だったので猫は飼えなかったし、その大御所先輩とは
-            恐れ多すぎてとてもじゃないけど気さくに喋れるような機会も持てなかった。</p>
-            
-            <p>にも拘らず、大御所先輩から
-            「猫」・・という表現が出てきたことに驚きと笑いを隠せませんでした笑。</p>
-            
-            <p>先輩はずーっと
-            しょぼいけど妙にほっこり系猫なワタシを観察する虎のようだったのかもしれません。</p>
-            
-            <p>もっとしっかりお話しする勇気さえあればと自責の念に駆られながら
-                新たなデザインの世界にシフトし、その先々でも猫好きなクライアント様と
-                共にお仕事をしたり、イベントを企画したりと「猫」を通した
-                不思議な異業種交流が積み重なりあらゆるデザインに関するキャリアを
-            積むことが出来ました。</p>
-            
+            <h4 class="subtitle">
+              “ 要点は押さえる陽だまりの猫 ” <br />ーーある先輩からの言葉ーー
+            </h4>
+          </div>
+          <div class="heading__text">
+            <p>
+              ジュエリーデザインの会社に勤務したいた時の先輩のひとりが、
+              私が退職するときに寄せ書きに書いてくださった「私の印象」が “
+              要点はちゃんと押さえる陽だまりの猫 ” と言うものでした。
+            </p>
+
+            <p>
+              当時は社員寮だったので猫は飼えなかったし、その大御所先輩とは
+              恐れ多すぎてとてもじゃないけど気さくに喋れるような機会も持てなかった。
+            </p>
+
+            <p>
+              にも拘らず、大御所先輩から
+              「猫」・・という表現が出てきたことに驚きと笑いを隠せませんでした笑。
+            </p>
+
+            <p>
+              先輩はずーっと
+              しょぼいけど妙にほっこり系猫なワタシを観察する虎のようだったのかもしれません。
+            </p>
+
+            <p>
+              もっとしっかりお話しする勇気さえあればと自責の念に駆られながら
+              新たなデザインの世界にシフトし、その先々でも猫好きなクライアント様と
+              共にお仕事をしたり、イベントを企画したりと「猫」を通した
+              不思議な異業種交流が積み重なりあらゆるデザインに関するキャリアを
+              積むことが出来ました。
+            </p>
+
             <p>戌年なんですけどね・・・</p>
-            
-            <p>猫神様に見守られながらデザインのお仕事で食べさせていただいております。</p>
-	    </div>
 
+            <p>
+              猫神様に見守られながらデザインのお仕事で食べさせていただいております。
+            </p>
+          </div>
 
-        <div class="staffs">
-        <div class="staff">
-            <figure class="staff-image">
-                <img src="./images/profile_tokiocat.svg" class="base-image" alt="TokioCat" />
-                <img src="./images/profile_tokiocat_hover.svg" class="hover-image" alt="TokioCat" />
-            </figure>
-            <div class="staff-box">
+          <div class="staffs">
+            <div class="staff">
+              <figure class="staff-image">
+                <img
+                  src="./images/profile_tokiocat.svg"
+                  class="base-image"
+                  alt="TokioCat"
+                />
+                <img
+                  src="./images/profile_tokiocat_hover.svg"
+                  class="hover-image"
+                  alt="TokioCat"
+                />
+              </figure>
+              <div class="staff-box">
                 <div class="staff-heading">
-                    <p class="staff-position">Art Director／Designyar</p>
-                    <p class="staff-name">Tokiocat</p>
+                  <p class="staff-position">Art Director／Designyar</p>
+                  <p class="staff-name">Tokiocat</p>
                 </div>
-            
-            <div class="staff-profile">
-                <p>元ジュエリーデザイナー。
-                都内鉄道会社系の広告代理店のハウスエージェンシーのグラフィックデザイナー、不動産広告代理店デザイン課在籍後、2026年に独立。フリーランスデザイナーとして活動。
-                ポスター、リーフ、パンフレットなど紙モノ広告を中心としたグラフィックデザインを得意とし、
-                webデザイン、モーショングラフィックなども制作。
-                受け手の人たちが安心するような 優しさ、楽しさ、親しみのあるデザインを手がけます。</p>
-            </div>
-            </div> 
-        </div>    
 
-        <div class="staff">
-            <figure class="staff-image">
-                <img src="./images/profile_otamacat.svg" class="base-image" alt="OtamaCat" />
-                <img src="./images/profile_otamacat_hover.svg" class="hover-image" alt="OtamaCat" />
-            </figure> 
-            <div class="staff-box">
+                <div class="staff-profile">
+                  <p>
+                    元ジュエリーデザイナー。
+                    都内鉄道会社系の広告代理店のハウスエージェンシーのグラフィックデザイナー、不動産広告代理店デザイン課在籍後、2026年に独立。フリーランスデザイナーとして活動。
+                    ポスター、リーフ、パンフレットなど紙モノ広告を中心としたグラフィックデザインを得意とし、
+                    webデザイン、モーショングラフィックなども制作。
+                    受け手の人たちが安心するような
+                    優しさ、楽しさ、親しみのあるデザインを手がけます。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="staff">
+              <figure class="staff-image">
+                <img
+                  src="./images/profile_otamacat.svg"
+                  class="base-image"
+                  alt="OtamaCat"
+                />
+                <img
+                  src="./images/profile_otamacat_hover.svg"
+                  class="hover-image"
+                  alt="OtamaCat"
+                />
+              </figure>
+              <div class="staff-box">
                 <div class="staff-heading">
-                    <p class="staff-position">CAT</p>   
-                    <p class="staff-name">Otama</p>
+                  <p class="staff-position">CAT</p>
+                  <p class="staff-name">Otama</p>
                 </div>
-            
-            <div class="staff-profile">   
-                <p>2013年9月29日（招き猫の日）生まれ（推定）。
-                猫の里親募集サイトを見たTokiocatと初対面するや否やTokiocatの膝に飛び乗り大音量のゴロゴロ音を奏で、自らキャリーバッグの中へ入り込み飼い猫の道を自ら決断する。その後は自宅に居ながらにNPO法人、一般企業、個人事業主など数々の猫好き異業種クライアント様を引き寄せ招き猫顔負けの福猫偉業を遂げる。</p>
+
+                <div class="staff-profile">
+                  <p>
+                    2013年9月29日（招き猫の日）生まれ（推定）。
+                    猫の里親募集サイトを見たTokiocatと初対面するや否やTokiocatの膝に飛び乗り大音量のゴロゴロ音を奏で、自らキャリーバッグの中へ入り込み飼い猫の道を自ら決断する。その後は自宅に居ながらにNPO法人、一般企業、個人事業主など数々の猫好き異業種クライアント様を引き寄せ招き猫顔負けの福猫偉業を遂げる。
+                  </p>
+                </div>
+              </div>
             </div>
-            </div>     
+          </div>
         </div>
-        </div>
+      </section>
 
-          
-    </div>
-</section>
-
-<section class="contact" id="contact">
-    <div class="container">
-        <h3 class="h3-title">Contact</h3>
-        <p>一粒のカリカリのような小粒サイズのことでも
-        お気軽にご相談ください。
-        寄り添い、ともに一歩づつ前へ進んでいきます。</p>
-        <!-- <figure class="contact-image">
+      <section class="contact" id="contact">
+        <div class="container">
+          <h3 class="h3-title">Contact</h3>
+          <p>
+            一粒のカリカリのような小粒サイズのことでも お気軽にご相談ください。
+            寄り添い、ともに一歩づつ前へ進んでいきます。
+          </p>
+          <!-- <figure class="contact-image">
             <img src="./images/icon_contact.svg" alt="">
         </figure> -->
-    </div>
-</section>
-</main>
+        </div>
+      </section>
+    </main>
 
-
-        <nav class="footer__nav">  
-            <ul>
-                <li><a href="#header">
-                    <div class="hover-container">
-                        <img src="./images/icon_home.svg" class="base-image" alt="ホーム 通常時" />
-                        <img src="./images/icon_home_hover.svg" class="hover-image" alt="ホーム ホバー時" />
-                        <div class="icon-name">Home</div>
-                    </div>
-                    </a>
-                </li>
-                <li><a href="#concept">
-                    <div class="hover-container">
-                        <img src="./images/icon_concept.svg" class="base-image" alt="コンセプト 通常時" />
-                        <img src="./images/icon_concept_hover.svg" class="hover-image" alt="コンセプト ホバー時" />
-                        <div class="icon-name">Concept</div>
-                    </div>
-                    </a>
-                </li>
-                <li><a href="#service">
-                    <div class="hover-container">
-                        <img src="./images/icon_service.svg" class="base-image" alt="サービス 通常時" />
-                        <img src="./images/icon_service_hover.svg" class="hover-image" alt="サービス ホバー時" />
-                        <div class="icon-name">Service</div>
-                    </div>
-                    </a>
-                </li>
-                <li><a href="#">
-                    <div class="hover-container">
-                    <img src="./images/icon_works.svg" class="base-image" alt="作品 通常時" />
-                        <img src="./images/icon_works_hover.svg" class="hover-image" alt="作品 ホバー時" />
-                        <div class="icon-name">Works</div>
-                    </div>
-                    </a>
-                </li>
-                <li><a href="#about">
-                    <div class="hover-container">
-                    <img src="./images/icon_profile.svg" class="base-image" alt="アバウト 通常時" />
-                        <img src="./images/icon_profile_hover.svg" class="hover-image" alt="アバウト ホバー時" />
-                        <div class="icon-name">About</div>
-                    </div>
-                    </a>
-                </li>
-                <li><a href="#contact">
-                    <div class="hover-container">   
-                    <img src="./images/icon_contact.svg" class="base-image" alt="コンタクト 通常時" />
-                        <img src="./images/icon_contact_hover.svg" class="hover-image" alt="コンタクト ホバー時" />
-                        <div class="icon-name">Contact</div>
-                    </div>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        
+    <nav class="footer__nav">
+      <ul>
+        <li>
+          <a href="#header">
+            <div class="hover-container">
+              <img
+                src="./images/icon_home.svg"
+                class="base-image"
+                alt="ホーム 通常時"
+              />
+              <img
+                src="./images/icon_home_hover.svg"
+                class="hover-image"
+                alt="ホーム ホバー時"
+              />
+              <div class="icon-name">Home</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#concept">
+            <div class="hover-container">
+              <img
+                src="./images/icon_concept.svg"
+                class="base-image"
+                alt="コンセプト 通常時"
+              />
+              <img
+                src="./images/icon_concept_hover.svg"
+                class="hover-image"
+                alt="コンセプト ホバー時"
+              />
+              <div class="icon-name">Concept</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#service">
+            <div class="hover-container">
+              <img
+                src="./images/icon_service.svg"
+                class="base-image"
+                alt="サービス 通常時"
+              />
+              <img
+                src="./images/icon_service_hover.svg"
+                class="hover-image"
+                alt="サービス ホバー時"
+              />
+              <div class="icon-name">Service</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="category.html">
+            <div class="hover-container">
+              <img
+                src="./images/icon_works.svg"
+                class="base-image"
+                alt="作品 通常時"
+              />
+              <img
+                src="./images/icon_works_hover.svg"
+                class="hover-image"
+                alt="作品 ホバー時"
+              />
+              <div class="icon-name">Works</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#about">
+            <div class="hover-container">
+              <img
+                src="./images/icon_profile.svg"
+                class="base-image"
+                alt="アバウト 通常時"
+              />
+              <img
+                src="./images/icon_profile_hover.svg"
+                class="hover-image"
+                alt="アバウト ホバー時"
+              />
+              <div class="icon-name">About</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <div class="hover-container">
+              <img
+                src="./images/icon_contact.svg"
+                class="base-image"
+                alt="コンタクト 通常時"
+              />
+              <img
+                src="./images/icon_contact_hover.svg"
+                class="hover-image"
+                alt="コンタクト ホバー時"
+              />
+              <div class="icon-name">Contact</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="footer__nav-sp">
+      <ul>
+        <li><a href="#header">Home</a></li>
+        <li><a href="#concept">Concept</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="category.html">Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
     <footer class="footer">
+      <div class="footer_logo">
+        <a href="#"><img src="./images/logo Tokiocat.svg" alt="TokioCat" /></a>
+      </div>
 
-        <div class="footer_logo">
-            <a href="#"><img src="./images/logo Tokiocat.svg" alt="TokioCat"></a>
-        </div>
-
-        <div class="copyright">&copy;2026 ©Tokiocat All rights reserved.</div>
+      <div class="copyright">&copy;2026 ©Tokiocat All rights reserved.</div>
     </footer>
 
-    
-            <a href="#header" class="pagetop">
-            <img src="./images/icon_pagetop.svg" alt="ページトップへ戻る" />
-            </a>
-    
+    <a href="#header" class="pagetop">
+      <img src="./images/icon_pagetop.svg" alt="ページトップへ戻る" />
+    </a>
 
-</body>
+    <script src="./js/script.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(function () {
+        $(".hamburger").on("click", function () {
+          $(".hamburger").toggleClass("open");
+          $(".header__nav-sp").fadeToggle();
+        });
+      });
+    </script>
+  </body>
 </html>
