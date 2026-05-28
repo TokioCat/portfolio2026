@@ -1,0 +1,535 @@
+@charset "utf-8";
+
+:root {
+  --maincolor: #333333;
+  --subcolor: #f5f5f5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  color: var(--maincolor);
+  background-color: var(--subcolor);
+}
+
+p {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.7;
+  font-feature-settings: "palt";
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+#header .logo {
+  width: 200px;
+  padding-top: 50px;
+  margin: 0 auto;
+}
+
+.hamburger {
+  display: none;
+}
+
+.header__nav-sp {
+  display: none;
+}
+
+.header__nav {
+  /* ++++++追加++++++ */
+  /* position: absolute;
+  top: 680px; */
+  /* ++++++++++++++++ */
+
+  width: 100%;
+  height: 80px;
+  background-color: var(--maincolor);
+}
+
+/* .header__nav.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+} */
+
+.header__nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+}
+
+.header__nav li {
+  font-size: 30px;
+  color: #f5f5f5;
+  padding: 0 36px;
+}
+
+.header__nav ul li a {
+  display: inline-block;
+  line-height: 80px;
+  text-transform: capitalize;
+}
+
+.header__nav ul li a:last-child {
+  padding-right: 0;
+}
+
+.header__nav ul li a:hover {
+  opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+  .header__nav {
+    display: none;
+  }
+
+  /* --- ハンバーガーアイコン ここから--- */
+
+  .hamburger {
+    display: block;
+  }
+
+  .icon-open {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9998; /* 最前面に固定 */
+    cursor: pointer;
+  }
+
+  /* 閉じるボタンの配置 */
+  .icon-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .icon-close img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .drawer-icon img {
+    width: 40px; /* アイコン画像のサイズ */
+    height: 40px;
+  }
+
+  /* デフォルトは開くアイコンを表示、閉じるアイコンを非表示 */
+  .drawer-icon .icon-close {
+    display: block;
+  }
+
+  /* メニュー展開時（activeクラス付与時） */
+  .drawer-icon .icon-open.active {
+    display: none;
+  }
+  .drawer-icon .icon-close.active {
+    display: block;
+  }
+
+  .drawer-icon .icon-open.active {
+    display: none;
+  }
+  .drawer-icon .icon-close.active {
+    display: block;
+  }
+
+  /* --- ドロワーメニュー --- */
+  .header__nav-sp {
+    position: fixed;
+    top: 0;
+    right: 0; /* 初期状態は画面外に隠す */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 250px;
+    transition: left 0.3s ease; /* スライドのアニメーション */
+    z-index: 9998;
+  }
+
+  .header__nav-sp ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* ul要素の幅を広げる */
+  }
+
+  .header__nav-sp a {
+    font-family: "WDXL Lubrifont JP N", sans-serif;
+    color: #fff;
+    font-size: 1.6rem;
+    text-decoration: none;
+    display: block; /* 範囲を広くしてタップしやすくする */
+  }
+}
+
+/* ここから上 spサイズ ドロワーメニュー */
+
+/* ここから下 pcサイズ worksの中身 */
+
+.web,
+.photo,
+.graphic,
+.logo,
+.mg,
+.cat {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 0 30px 0;
+}
+
+.works {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 0 30px 0;
+}
+
+.works,
+.web h3 {
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.works,
+.web .subtitle {
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.works__container {
+  padding-bottom: 20px;
+}
+
+/* .container img {
+  display: block;
+  align-items: center;
+} */
+
+.works__container a:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .web,
+  .photo,
+  .graphic,
+  .logo,
+  .mg,
+  .cat,
+  .works {
+    max-width: 480px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 80px 0;
+  }
+
+  .type ul {
+    display: flex;
+    flex-wrap: wrap; /* 2列で折り返すように設定 */
+    justify-content: space-between; /* 左右の端に綺麗に収める */
+    gap: 12px; /* ボタン同士の上下左右の隙間 */
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .type li {
+    width: calc(50% - 6px); /* 50%（2列）からgapの半分を引いたサイズ */
+    margin-right: 0; /* PC用についている右余白（24px）をリセット */
+    box-sizing: border-box;
+    text-align: center; /* 文字を中央寄せにする */
+  }
+}
+
+.content__title {
+  padding: 10px 20px 5px 0;
+}
+
+.content__comment {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: lighter;
+  font-feature-settings: "palt";
+}
+
+.content__type {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 12px;
+  border: 1px solid #969696;
+  justify-content: center;
+}
+
+.content__type:hover {
+  color: #f5f5f5;
+  background-color: #969696;
+}
+
+.type ul {
+  display: flex;
+  justify-content: center;
+}
+
+.type li {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 12px;
+  border: 1px solid #969696;
+  justify-content: center;
+  margin-right: 24px;
+}
+
+.type li:hover {
+  color: #f5f5f5;
+  background-color: #969696;
+}
+
+.contact h3 {
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  padding-bottom: 40px;
+}
+
+/* この下　laptopサイズ のヘッダーナビ */
+
+@media (768px <= width < 1099px) {
+  .header__nav {
+    /* ++++++追加++++++ */
+    /* position: absolute;
+    top: 614px; */
+    /* ++++++++++++++++ */
+    width: 100%;
+    height: 74px;
+    background-color: var(--maincolor);
+  }
+
+  /* .header__nav.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  } */
+
+  .header__nav li {
+    font-size: 28px;
+    color: #f5f5f5;
+    padding: 0 25px;
+  }
+
+  /* .service,
+  .about,
+  .h3-title {
+    padding-top: 20px;
+  } */
+}
+
+/* この上　laptopサイズ のヘッダーナビ */
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* 画面幅が 768px 以下のときに縦並びにする設定 */
+@media screen and (max-width: 768px) {
+  #header .logo {
+    width: 200px;
+    padding-top: 50px;
+    margin: 0 auto;
+  }
+
+  #contact {
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
+  .container {
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
+
+.footer__nav-sp {
+  display: none;
+}
+
+.footer__nav ul {
+  width: 960px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  padding: 60px 0 130px 0;
+}
+
+.footer__nav li {
+  width: 100px;
+  height: 135px;
+  /*font-family: "WDXL Lubrifont JP N", sans-serif;*/
+  /*font-size: 30px;*/
+  /*text-align: center;*/
+  display: flex;
+  flex-direction: column;
+}
+
+.hover-container {
+  position: relative;
+  width: 100px;
+}
+
+.hover-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  /*transition: opacity 0.1s;*/
+}
+
+.hover-container .base-image {
+  opacity: 1;
+}
+
+.hover-container .hover-image {
+  opacity: 0;
+}
+
+.hover-container:hover .base-image {
+  opacity: 0;
+}
+
+.hover-container:hover .hover-image {
+  opacity: 1;
+}
+
+.icon-name {
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.icon-name:hover {
+  transform: scale(1.1);
+  transition: transform 0.1s ease;
+}
+
+.footer_logo {
+  width: 200px;
+  padding-bottom: 45px;
+  margin: 0 auto;
+}
+
+/* sp フッターナビ */
+@media screen and (max-width: 768px) {
+  .footer__nav {
+    display: none;
+  }
+
+  .footer__nav-sp,
+  .footer__nav-sp ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    margin: 0 auto;
+    list-style: none;
+  }
+
+  .footer__nav-sp li,
+  .footer__nav-sp a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1.8rem;
+    font-family: "WDXL Lubrifont JP N", sans-serif;
+    color: var(--maincolor);
+  }
+
+  .footer__nav-sp ul li a:hover {
+    opacity: 0.5;
+  }
+}
+
+.copyright {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  color: var(--maincolor);
+  font-size: 12px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.pagetop {
+  position: fixed;
+  right: 10px; /* 右からの位置 */
+  bottom: 20px; /* 下からの位置 */
+  z-index: 100; /* 他の要素より上に表示 */
+}
+
+.pagetop img {
+  width: 100px; /* 画像の幅 */
+  height: auto; /* 高さは自動調整 */
+}
+
+.pagetop :hover {
+  animation: shake 0.5s; /* 0.5秒間動く */
+  animation-iteration-count: infinite; /* 無限にループ */
+  display: inline-block; /* インライン要素の場合必要 */
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
