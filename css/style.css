@@ -50,6 +50,7 @@ p {
   width: 100%;
   height: 80px;
   background-color: var(--maincolor);
+  z-index: 99999;
 }
 
 .header__nav.is-fixed {
@@ -764,10 +765,9 @@ p {
 
 .pagetop {
   animation: pagetop 3s ease-in-out infinite alternate;
-    background: url(./images/icon_pagetop.svg) no-repeat center center / 60px
-      auto;
-    display: inline-block;
-    transition: 1.5s ease-in-out;
+  background: url(./images/icon_pagetop.svg) no-repeat center center / 60px auto;
+  display: inline-block;
+  transition: 1.5s ease-in-out;
   position: fixed;
   right: 10px; /* 右からの位置 */
   bottom: 20px; /* 下からの位置 */
@@ -822,16 +822,16 @@ p {
 }
 
 @keyframes pagetop {
-    0% {
-      transform: translate(0, 0) rotate(-7deg);
-    }
-    50% {
-      transform: translate(0, -7px) rotate(0deg);
-    }
-    100% {
-      transform: translate(0, 0) rotate(7deg);
-    }
+  0% {
+    transform: translate(0, 0) rotate(-7deg);
   }
+  50% {
+    transform: translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(7deg);
+  }
+}
 
 /* pagetopが 768px 以下のときにふわふわする設定 */
 @media screen and (max-width: 768px) {
@@ -847,7 +847,6 @@ p {
     transition: 1.5s ease-in-out;
     width: 70px;
     height: 70px;
-    
   }
 
   .pagetop img {
