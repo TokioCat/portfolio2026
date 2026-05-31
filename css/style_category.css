@@ -602,6 +602,10 @@ p {
       transform: translate(0, 0) rotate(7deg);
     }
   }
+
+  .pagetop :hover {
+    animation: none;
+  }
 }
 
 iframe[src*="youtube.com"],
