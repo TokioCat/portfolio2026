@@ -46,21 +46,21 @@
             class="icon-close"
           />
         </div>
-
-        <nav class="header__nav-sp">
-          <ul>
-            <li><a href="#header">Home</a></li>
-            <li><a href="#concept">Concept</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="category.html">Works</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
       </div>
 
+      <nav class="header__nav-sp">
+        <ul>
+          <li><a href="#header">Home</a></li>
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="category.html">Works</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
       <h1 class="logo">
-        <a href="index_0527.html#header">
+        <a href="#header">
           <img src="./images/logo Tokiocat.svg" alt="TokioCat" />
         </a>
       </h1>
@@ -436,9 +436,22 @@
 
     <script>
       $(function () {
-        $(".hamburger").on("click", function () {
-          $(".hamburger").toggleClass("open");
-          $(".header__nav-sp").fadeToggle();
+        // ハンバーガー（猫）をクリックしたとき
+        $(".hamburger").on("click", function (e) {
+          // ナビゲーション内のリンク以外をクリックした時だけ開閉をトリガー
+          if (
+            $(e.target).closest(".header__nav-sp").length === 0 ||
+            $(e.target).is("a")
+          ) {
+            $(this).toggleClass("open");
+            $(".header__nav-sp").fadeToggle();
+          }
+        });
+
+        // メニュー内のリンクをタップしたときも自動的に閉じる
+        $(".header__nav-sp a").on("click", function () {
+          $(".hamburger").removeClass("open");
+          $(".header__nav-sp").fadeOut();
         });
       });
     </script>

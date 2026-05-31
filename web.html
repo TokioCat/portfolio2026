@@ -24,11 +24,11 @@
       <nav class="header__nav">
         <ul>
           <li><a href="index.html#header">Home</a></li>
-          <li><a href="concept/index.html">Concept</a></li>
-          <li><a href="service/index.html">Service</a></li>
+          <li><a href="index.html#concept">Concept</a></li>
+          <li><a href="index.html#service">Service</a></li>
           <li><a href="category.html">Works</a></li>
-          <li><a href="about/index.html">About</a></li>
-          <li><a href="contact/index.html">Contact</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
 
@@ -46,18 +46,18 @@
             class="icon-close"
           />
         </div>
-
-        <nav class="header__nav-sp">
-          <ul>
-            <li><a href="index.html#header">Home</a></li>
-            <li><a href="#concept/index.html">Concept</a></li>
-            <li><a href="#service/index.html">Service</a></li>
-            <li><a href="category.html">Works</a></li>
-            <li><a href="#about/index.html">About</a></li>
-            <li><a href="#contact/index.html">Contact</a></li>
-          </ul>
-        </nav>
       </div>
+
+      <nav class="header__nav-sp">
+        <ul>
+          <li><a href="index.html#header">Home</a></li>
+          <li><a href="index.html#concept">Concept</a></li>
+          <li><a href="index.html#service">Service</a></li>
+          <li><a href="category.html">Works</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
 
       <h1 class="logo">
         <a href="index.html#header">
@@ -176,7 +176,7 @@
           <ul>
             <li><a href="category.html">ALL</a></li>
             <li><a href="web.html">web</a></li>
-            <li><a href="photo.html">photograph</a></li>
+            <li><a href="photo.html">photo</a></li>
             <li><a href="graphic.html">graphic</a></li>
             <li><a href="logo.html">logo</a></li>
             <li><a href="mg.html">MG</a></li>
@@ -202,7 +202,7 @@
     <nav class="footer__nav">
       <ul>
         <li>
-          <a href="index.html">
+          <a href="index.html#header">
             <div class="hover-container">
               <img
                 src="./images/icon_home.svg"
@@ -324,7 +324,7 @@
       <div class="copyright">&copy;2026 ©Tokiocat All rights reserved.</div>
     </footer>
 
-    <a href="#header" class="pagetop">
+    <a href="index.html#header" class="pagetop">
       <img src="./images/icon_pagetop.svg" alt="ページトップへ戻る" />
     </a>
 
@@ -334,9 +334,22 @@
 
     <script>
       $(function () {
-        $(".hamburger").on("click", function () {
-          $(".hamburger").toggleClass("open");
-          $(".header__nav-sp").fadeToggle();
+        // ハンバーガー（猫）をクリックしたとき
+        $(".hamburger").on("click", function (e) {
+          // ナビゲーション内のリンク以外をクリックした時だけ開閉をトリガー
+          if (
+            $(e.target).closest(".header__nav-sp").length === 0 ||
+            $(e.target).is("a")
+          ) {
+            $(this).toggleClass("open");
+            $(".header__nav-sp").fadeToggle();
+          }
+        });
+
+        // メニュー内のリンクをタップしたときも自動的に閉じる
+        $(".header__nav-sp a").on("click", function () {
+          $(".hamburger").removeClass("open");
+          $(".header__nav-sp").fadeOut();
         });
       });
     </script>
