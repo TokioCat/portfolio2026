@@ -50,7 +50,7 @@ p {
   width: 100%;
   height: 80px;
   background-color: var(--maincolor);
-  z-index: 99999;
+  z-index: 9996;
 }
 
 .header__nav.is-fixed {
