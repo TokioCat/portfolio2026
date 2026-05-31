@@ -278,7 +278,6 @@ p {
   background-color: #969696;
 }
 
-
 .type__header ul {
   display: flex;
   justify-content: center;
@@ -614,4 +613,61 @@ iframe[src*="youtube-nocookie.com"] {
 
 .contents__txt {
   margin-bottom: 60px;
+}
+
+/* この下から コンタクトフォーム */
+
+.contact__message {
+  font-size: 0.85em;
+  padding: 30px 0;
+}
+
+/* 追加分のCSS */
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 14px 0 6px 0;
+}
+
+.note {
+  font-size: 0.85em;
+  color: #666;
+  font-weight: normal;
+}
+
+.file-help {
+  margin: 5px 0 0 0;
+  font-size: 0.8em;
+  color: #777;
+  margin-bottom: 50px;
+}
+
+.required {
+  color: #e99a66;
+  font-size: 0.85em;
+}
+
+.form-group {
+  margin: 30px 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--maincolor);
+  border-radius: 4px;
+  box-sizing: border-box; /* パディングを幅に含める */
+  margin: 12px 0;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
