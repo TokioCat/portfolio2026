@@ -91,69 +91,44 @@ p {
     display: none;
   }
 
-  /* --- ハンバーガーアイコン ここから--- */
-
+  /* --- ハンバーガーアイコン（猫ちゃんボタン） --- */
   .hamburger {
-    display: block;
-  }
-
-  .icon-open {
-    position: fixed;
+    display: block !important;
+    position: fixed; /* 画面の右上に常に固定 */
     top: 20px;
     right: 20px;
-    z-index: 9998; /* 最前面に固定 */
+    z-index: 10000; /* 黒い背景よりも手前に表示 */
     cursor: pointer;
+    width: 40px; /* 画像のサイズに合わせて適宜調整してください */
+    height: auto;
   }
 
-  /* 閉じるボタンの配置 */
-  .icon-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  /* 通常時の画像表示制御 */
+  .hamburger .icon-close {
+    display: none !important;
+  }
+  .hamburger .icon-open {
+    display: block !important;
   }
 
-  .icon-close img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+  /* メニューが開いたとき（.openがついたとき）の画像切り替え */
+  .hamburger.open .icon-open {
+    display: none !important;
+  }
+  .hamburger.open .icon-close {
+    display: block !important;
   }
 
-  .drawer-icon img {
-    width: 40px; /* アイコン画像のサイズ */
-    height: 40px;
-  }
-
-  /* デフォルトは開くアイコンを表示、閉じるアイコンを非表示 */
-  .drawer-icon .icon-close {
-    display: block;
-  }
-
-  /* メニュー展開時（activeクラス付与時） */
-  .drawer-icon .icon-open.active {
-    display: none;
-  }
-  .drawer-icon .icon-close.active {
-    display: block;
-  }
-
-  .drawer-icon .icon-open.active {
-    display: none;
-  }
-  .drawer-icon .icon-close.active {
-    display: block;
-  }
-
-  /* --- ドロワーメニュー --- */
+  /* --- ドロワーメニュー（黒い背景） --- */
   .header__nav-sp {
     position: fixed;
     top: 0;
-    right: 0; /* 初期状態は画面外に隠す */
+    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding-top: 250px;
-    transition: left 0.3s ease; /* スライドのアニメーション */
-    z-index: 9998;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85); /* 透過の黒 */
+    z-index: 9999; /* 猫ちゃんの一歩後ろに配置 */
+    display: none; /* ★重要：最初は非表示にして隠しておく */
   }
 
   .header__nav-sp ul {
@@ -164,15 +139,17 @@ p {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%; /* ul要素の幅を広げる */
+    width: 100%;
+    height: 100%;
+    justify-content: center; /* 画面の上下中央にナビを配置 */
   }
 
   .header__nav-sp a {
     font-family: "WDXL Lubrifont JP N", sans-serif;
     color: #fff;
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     text-decoration: none;
-    display: block; /* 範囲を広くしてタップしやすくする */
+    display: block;
   }
 }
 
@@ -182,6 +159,10 @@ p {
   align-items: center;
 }
 
+.concept {
+  overflow: hidden;
+}
+
 .concept .main-img {
   width: 1100px;
   padding-top: 30px;
@@ -189,6 +170,28 @@ p {
   /*display: block;*/
   position: relative;
 }
+
+/* この下 ネコモニター浮かび上がるアニメーション */
+.main-img {
+  /* 初期状態：透明で少し下に配置 */
+  opacity: 0;
+  transform: translateY(30px);
+
+  /* アニメーションの設定（1.5秒かけてスッと動く） */
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* 開始位置（下） */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* 終了位置（元の場所） */
+  }
+}
+/* この上 ネコモニター浮かび上がるアニメーション */
 
 .concept-inner {
   position: absolute;
@@ -260,7 +263,7 @@ p {
 }
 
 #concept h2 {
-  width: 540px;
+  max-width: 540px;
 }
 
 /* pcサイズ モニターの中身 ここまで */
@@ -352,7 +355,7 @@ p {
   }
 
   .heading__text {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 }
 
@@ -539,6 +542,7 @@ p {
 
 .staffs {
   padding-top: 20px;
+  margin-top: 20px;
 }
 
 .staff {
@@ -759,6 +763,11 @@ p {
 }
 
 .pagetop {
+  animation: pagetop 3s ease-in-out infinite alternate;
+    background: url(./images/icon_pagetop.svg) no-repeat center center / 60px
+      auto;
+    display: inline-block;
+    transition: 1.5s ease-in-out;
   position: fixed;
   right: 10px; /* 右からの位置 */
   bottom: 20px; /* 下からの位置 */
@@ -809,5 +818,52 @@ p {
   }
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes pagetop {
+    0% {
+      transform: translate(0, 0) rotate(-7deg);
+    }
+    50% {
+      transform: translate(0, -7px) rotate(0deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(7deg);
+    }
+  }
+
+/* pagetopが 768px 以下のときにふわふわする設定 */
+@media screen and (max-width: 768px) {
+  .pagetop {
+    position: fixed;
+    right: 10px; /* 右からの位置 */
+    bottom: 40px; /* 下からの位置 */
+    z-index: 100; /* 他の要素より上に表示 */
+    animation: pagetop 3s ease-in-out infinite alternate;
+    background: url(./images/icon_pagetop.svg) no-repeat center center / 60px
+      auto;
+    display: inline-block;
+    transition: 1.5s ease-in-out;
+    width: 70px;
+    height: 70px;
+    
+  }
+
+  .pagetop img {
+    width: 80px; /* 画像の幅 */
+    height: auto; /* 高さは自動調整 */
+  }
+
+  @keyframes pagetop {
+    0% {
+      transform: translate(0, 0) rotate(-7deg);
+    }
+    50% {
+      transform: translate(0, -7px) rotate(0deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(7deg);
+    }
   }
 }

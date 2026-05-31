@@ -86,75 +86,49 @@ p {
 .header__nav ul li a:hover {
   opacity: 0.5;
 }
-
 @media (max-width: 767px) {
   .header__nav {
     display: none;
   }
 
-  /* --- ハンバーガーアイコン ここから--- */
-
+  /* --- ハンバーガーアイコン（猫ちゃんボタン） --- */
   .hamburger {
-    display: block;
-  }
-
-  .icon-open {
-    position: fixed;
+    display: block !important;
+    position: fixed; /* 画面の右上に常に固定 */
     top: 20px;
     right: 20px;
-    z-index: 9998; /* 最前面に固定 */
+    z-index: 10000; /* 黒い背景よりも手前に表示 */
     cursor: pointer;
+    width: 30px; /* 画像のサイズに合わせて適宜調整 */
+    height: auto;
   }
 
-  /* 閉じるボタンの配置 */
-  .icon-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  /* 通常時の画像表示制御 */
+  .hamburger .icon-close {
+    display: none !important;
+  }
+  .hamburger .icon-open {
+    display: block !important;
   }
 
-  .icon-close img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+  /* メニューが開いたとき（.openがついたとき）の画像切り替え */
+  .hamburger.open .icon-open {
+    display: none !important;
+  }
+  .hamburger.open .icon-close {
+    display: block !important;
   }
 
-  .drawer-icon img {
-    width: 40px; /* アイコン画像のサイズ */
-    height: 40px;
-  }
-
-  /* デフォルトは開くアイコンを表示、閉じるアイコンを非表示 */
-  .drawer-icon .icon-close {
-    display: block;
-  }
-
-  /* メニュー展開時（activeクラス付与時） */
-  .drawer-icon .icon-open.active {
-    display: none;
-  }
-  .drawer-icon .icon-close.active {
-    display: block;
-  }
-
-  .drawer-icon .icon-open.active {
-    display: none;
-  }
-  .drawer-icon .icon-close.active {
-    display: block;
-  }
-
-  /* --- ドロワーメニュー --- */
+  /* --- ドロワーメニュー（黒い背景） --- */
   .header__nav-sp {
     position: fixed;
     top: 0;
-    right: 0; /* 初期状態は画面外に隠す */
+    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding-top: 250px;
-    transition: left 0.3s ease; /* スライドのアニメーション */
-    z-index: 9998;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85); /* 透過の黒 */
+    z-index: 9999; /* 猫ちゃんの一歩後ろに配置 */
+    display: none; /* 最初は非表示にして隠しておく */
   }
 
   .header__nav-sp ul {
@@ -165,15 +139,17 @@ p {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%; /* ul要素の幅を広げる */
+    width: 100%;
+    height: 100%;
+    justify-content: center; /* 画面の上下中央にナビを配置 */
   }
 
   .header__nav-sp a {
     font-family: "WDXL Lubrifont JP N", sans-serif;
     color: #fff;
-    font-size: 1.6rem;
+    font-size: 2.4rem; /* タップしやすい大きめサイズ */
     text-decoration: none;
-    display: block; /* 範囲を広くしてタップしやすくする */
+    display: block;
   }
 }
 
@@ -238,21 +214,40 @@ p {
     max-width: 480px;
     width: 80%;
     margin: 0 auto;
-    padding: 80px 0;
+    padding: 40px 0;
+  }
+
+  .type__header ul {
+    display: flex;
+    flex-wrap: wrap; /* 2列で折り返すように設定 */
+    justify-content: space-between; /* 左右の端に綺麗に収める */
+    gap: 30px; /* ボタン同士の上下左右の隙間 */
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .type__header li {
+    width: calc(30% - 4px); /* 50%（2列）からgapの半分を引いたサイズ */
+    font-size: 30px;
+    margin-right: 0; /* PC用についている右余白（24px）をリセット */
+    box-sizing: border-box;
+    text-align: center; /* 文字を中央寄せにする */
   }
 
   .type ul {
     display: flex;
     flex-wrap: wrap; /* 2列で折り返すように設定 */
     justify-content: space-between; /* 左右の端に綺麗に収める */
-    gap: 12px; /* ボタン同士の上下左右の隙間 */
+    gap: 30px; /* ボタン同士の上下左右の隙間 */
     padding: 0;
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
   }
 
   .type li {
-    width: calc(50% - 6px); /* 50%（2列）からgapの半分を引いたサイズ */
+    width: calc(30% - 4px); /* 50%（2列）からgapの半分を引いたサイズ */
+    font-size: 30px;
     margin-right: 0; /* PC用についている右余白（24px）をリセット */
     box-sizing: border-box;
     text-align: center; /* 文字を中央寄せにする */
@@ -273,12 +268,38 @@ p {
 .content__type {
   display: inline-block;
   padding: 2px 10px;
-  font-size: 12px;
+  font-size: 15px;
   border: 1px solid #969696;
   justify-content: center;
 }
 
 .content__type:hover {
+  color: #f5f5f5;
+  background-color: #969696;
+}
+
+
+.type__header ul {
+  display: flex;
+  justify-content: center;
+}
+
+.type__header ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.type__header li {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 14px;
+  border: 1px solid #969696;
+  justify-content: center;
+  margin-right: 24px;
+}
+
+.type__header li:hover {
   color: #f5f5f5;
   background-color: #969696;
 }
@@ -290,8 +311,8 @@ p {
 
 .type li {
   display: inline-block;
-  padding: 2px 10px;
-  font-size: 12px;
+  padding: 4px 10px;
+  font-size: 14px;
   border: 1px solid #969696;
   justify-content: center;
   margin-right: 24px;
@@ -481,6 +502,10 @@ p {
 }
 
 .pagetop {
+  animation: pagetop 3s ease-in-out infinite alternate;
+  background: url(./images/icon_pagetop.svg) no-repeat center center / 60px auto;
+  display: inline-block;
+  transition: 1.5s ease-in-out;
   position: fixed;
   right: 10px; /* 右からの位置 */
   bottom: 20px; /* 下からの位置 */
@@ -532,4 +557,61 @@ p {
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
   }
+}
+
+@keyframes pagetop {
+  0% {
+    transform: translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform: translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(7deg);
+  }
+}
+
+/* pagetopが 768px 以下のときにふわふわする設定 */
+@media screen and (max-width: 768px) {
+  .pagetop {
+    position: fixed;
+    right: 10px; /* 右からの位置 */
+    bottom: 40px; /* 下からの位置 */
+    z-index: 100; /* 他の要素より上に表示 */
+    animation: pagetop 3s ease-in-out infinite alternate;
+    background: url(./images/icon_pagetop.svg) no-repeat center center / 60px
+      auto;
+    display: inline-block;
+    transition: 1.5s ease-in-out;
+    width: 70px;
+    height: 70px;
+  }
+
+  .pagetop img {
+    width: 80px; /* 画像の幅 */
+    height: auto; /* 高さは自動調整 */
+  }
+
+  @keyframes pagetop {
+    0% {
+      transform: translate(0, 0) rotate(-7deg);
+    }
+    50% {
+      transform: translate(0, -7px) rotate(0deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(7deg);
+    }
+  }
+}
+
+iframe[src*="youtube.com"],
+iframe[src*="youtube-nocookie.com"] {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+}
+
+.contents__txt {
+  margin-bottom: 60px;
 }
